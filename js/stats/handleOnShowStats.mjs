@@ -29,8 +29,6 @@ export function handleOnShowStats() {
         // статистика за прошлый месяц
         const hoursMonthBefore = countHoursMonth(datesEmployee, 1);
 
-        console.log(hoursMonthBefore) ;
-
         const earningsMonthBefore = Math.round(hoursMonthBefore * rate); 
         
         // статистика за позапрошлый месяц

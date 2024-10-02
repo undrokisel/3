@@ -3,8 +3,6 @@ import { getHours } from "./getHours.mjs";
 export function countHoursMonth(datesEmloyee, monthShift = 0){
     // datesEmloyee - объект с ключами - датами YYYY-MM-DD
 
-    console.log("monthShift", monthShift);
-
     const now = new Date();
     // текущий год и месяц: 
     const currYear = +now.getFullYear();
@@ -15,7 +13,6 @@ export function countHoursMonth(datesEmloyee, monthShift = 0){
         : 12 + nowMonth - monthShift;
 
 
-    console.log("currMonth", typeof currMonth, currMonth);
 
     
     // получаем массив дат и часов по текущему месяцу

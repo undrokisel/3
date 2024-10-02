@@ -4,7 +4,7 @@ html {
     min-height: 100vh;
     /* min-width: 100vw; */
 
-    font-size: 24px;
+    font-size: 20px;
 
     overflow: auto;
 
@@ -17,7 +17,7 @@ html {
     overflow: hidden;
     text-align: center;
 
-    font-size: 24px;
+    font-size: 20px;
 
 }
 
@@ -27,7 +27,7 @@ body {
     padding: 10px;
 
     /* background: URL('/assets/images/background.png'); */
-    background: URL('assets/images/2.png');
+    background: URL('assets/images/2.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 44% bottom;
@@ -185,6 +185,7 @@ button:focus-visible {
 
 .work-day {
     background-color: #ffff00 !important;
+    color: black !important;
     /* Желтый цвет */
 }
 

@@ -53,11 +53,22 @@ export function renderCalendar(workDayState){
             },
             changeTime(e, self) {}, // изменение времени
             getDays(day, date, HTMLElement, HTMLButtonElement, self) {
+                
+                HTMLButtonElement.style.flexDirection = 'column';
+                HTMLButtonElement.innerHTML = `<span>${day}</span><span style="font-size: 8px;color:black;>.</span>`;
+                
                 if (employeeWorkDays){
                     if (date in employeeWorkDays){
-                            HTMLButtonElement.classList.add('work-day');
+                        HTMLButtonElement.classList.add('work-day');
+                        HTMLButtonElement.innerHTML = `
+                        <span>${day}</span>
+                        <span style="font-size: 12px;color:black;">${employeeWorkDays[date][0]}</span>
+                        <span style="font-size: 12px;color:black;">${employeeWorkDays[date][1]}</span>
+                        
+                        `
                     }
-                }
+                }    
+
             },
         },
     });
