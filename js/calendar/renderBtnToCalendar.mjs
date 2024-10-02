@@ -49,7 +49,6 @@ export function renderCalendar(workDayState){
             clickDay(e, calendar) { // клик по дате
                 const date = e.target.dataset.calendarDay;
                 workDayState = {...workDayState, date} 
-                console.log('e.target', e.target.dataset);
                 handleOnChooseDay(e, calendar, workDayState)
             },
 
