@@ -34,7 +34,7 @@ export const startPage = () => {
 
     if (state) {
         // если что-то есть в сторе, то отрисовываем
-        renderState(state);
+        // renderState(state);
         // а также кнопку для отметки рабочей смены;
         checkInWorkDayBtn();
     }

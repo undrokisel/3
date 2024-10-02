@@ -35,8 +35,8 @@ export function renderSelectEmployee() {
 export function handleSelectOnChangeEmploee (e, workDayState = {}){
 
     hideElements();
-
     goHomeBtn();
+
 
     const chosenEmployee = e.target.value;
     workDayState.name = chosenEmployee;
@@ -46,6 +46,8 @@ export function handleSelectOnChangeEmploee (e, workDayState = {}){
     // и кнопкой смены сотрудника
     renderChosenEmloyeeBlock(chosenEmployee);
     
+
+
     // отрисовка призыва выбрать дату
     displayCallToChooseDate();
         

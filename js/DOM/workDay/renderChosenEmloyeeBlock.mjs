@@ -4,12 +4,15 @@ import { handleOnChangeEmployeeBtn } from "../selectEmployee/handleOnChangeEmplo
 import { displayChosenEmloyee } from "./displayChosenEmloyee.mjs";
 
 export function renderChosenEmloyeeBlock(chosenEmployee){
+
+
+    // отрисовка кнопки "Сменить сотрудника"
+    createChooseEmployeeBtn();
+
     // отрисовка имени выбранного персонажа
     displayChosenEmloyee(chosenEmployee);
 
-// отрисовка кнопки "Сменить сотрудника"
-createChooseEmployeeBtn();
-   
+
 }
 
 

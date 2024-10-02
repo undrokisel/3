@@ -18,7 +18,7 @@ export function addEmployeeProcessStepRate (nameEmployee){
     
     displayElem({
         id: 'hint',
-        innerText: 'Введите часовой грейд сотрудника'
+        innerText: 'Оплата за час'
     })
     
     // получить елемент для вставки узлов

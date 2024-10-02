@@ -15,17 +15,17 @@ export function addEmployeeProcessStepName(){
 
     goHomeBtn();
 
-    displayElem({
-        id: "hint",
-        innerText: "Введите имя нового сотрудника"
-    })
+    // displayElem({
+    //     id: "hint",
+    //     innerText: "Введите имя нового сотрудника"
+    // })
 
     // получить елемент для вставки узлов
     const display = document.querySelector('.display'); 
 
     // создать инпут для ввода имени
     const input = createInput({
-        placeholder:'Введите имя', 
+        placeholder:'Имя нового сотрудника', 
         className: 'add-employee-input__name',
         id: btnIds.ADD_EMPLOYEE_NAME_BTN 
     });

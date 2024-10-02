@@ -49,21 +49,22 @@ export function renderCalendar(workDayState){
             clickDay(e, calendar) { // клик по дате
                 const date = e.target.dataset.calendarDay;
                 workDayState = {...workDayState, date} 
+                console.log('e.target', e.target.dataset);
                 handleOnChooseDay(e, calendar, workDayState)
             },
+
             changeTime(e, self) {}, // изменение времени
             getDays(day, date, HTMLElement, HTMLButtonElement, self) {
-                
                 HTMLButtonElement.style.flexDirection = 'column';
-                HTMLButtonElement.innerHTML = `<span>${day}</span><span style="font-size: 8px;color:black;>.</span>`;
-                
+                HTMLButtonElement.innerHTML = `<span data-calendar-day=${date}>${day}</span><span data-calendar-day=${date} style="font-size: 8px;color:black;>.</span>`;
+
                 if (employeeWorkDays){
                     if (date in employeeWorkDays){
                         HTMLButtonElement.classList.add('work-day');
                         HTMLButtonElement.innerHTML = `
-                        <span>${day}</span>
-                        <span style="font-size: 12px;color:black;">${employeeWorkDays[date][0]}</span>
-                        <span style="font-size: 12px;color:black;">${employeeWorkDays[date][1]}</span>
+                        <span data-calendar-day=${date}>${day}</span>
+                        <span data-calendar-day=${date} style="font-size: 10px;color:black;">${employeeWorkDays[date][0]}</span>
+                        <span data-calendar-day=${date} style="font-size: 10px;color:black;">${employeeWorkDays[date][1]}</span>
                         
                         `
                     }
