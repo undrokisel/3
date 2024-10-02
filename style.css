@@ -1,0 +1,197 @@
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* min-width: 100vw; */
+
+    font-size: 24px;
+
+    overflow: auto;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+
+    font-size: 24px;
+
+}
+
+body {
+    min-height: 100%;
+    margin: 10px;
+    padding: 10px;
+
+    /* background: URL('/assets/images/background.png'); */
+    background: URL('/assets/images/2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 44% bottom;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.display {
+    flex: 1 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+button:not([class*="calendar"]),
+input,
+select,
+option {
+    width: 300px;
+}
+
+p,
+#hint {
+    width: 300px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#hint {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+input,
+button,
+select,
+option {
+    min-height: 40px;
+    background-color: orange;
+    color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+input {
+    background-color: lightgray;
+
+}
+
+
+select,
+option {
+    min-width: 200px !important;
+    background-color: gray !important;
+    border: 2px solid white;
+}
+
+
+
+
+#calendar {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: gray !important;
+
+    border: 2px solid white !important;
+}
+
+
+
+.vanilla-calendar-arrow.vanilla-calendar-arrow_prev:before {
+    color: white !important;
+}
+
+.vanilla-calendar-day__btn:not([class*="selected"],
+    [class*="weekend"],
+    [class*="work-day"]),
+.vanilla-calendar-time__hours>input,
+.vanilla-calendar-time__minutes>input,
+.vanilla-calendar-time__range>input,
+.vanilla-calendar-years__year:not([class*="selected"]),
+.vanilla-calendar-months__month:not([class*="selected"]) {
+    background-color: white !important;
+    color: black !important;
+}
+
+.vanilla-calendar-time__range>input {
+    color: orange !important;
+    margin: 5px 0 !important;
+}
+
+
+.vanilla-calendar-day__btn_weekend {
+    background-color: lightcyan !important;
+}
+
+
+
+button:hover,
+button:focus-visible {
+    background: green;
+    color: white;
+}
+
+.employees-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.employee-card {
+
+    background-color: gray;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.vanilla-calendar-time {
+    border: none !important;
+    margin: 3px !important;
+    padding: 3px !important;
+    background-color: gray;
+}
+
+.work-day {
+    background-color: #ffff00 !important;
+    /* Желтый цвет */
+}
+
+.mb-30{
+    margin-bottom: 30px !important;
+}
+
+span {
+    text-align: left !important;
+}
