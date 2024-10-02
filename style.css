@@ -27,7 +27,7 @@ body {
     padding: 10px;
 
     /* background: URL('/assets/images/background.png'); */
-    background: URL('/assets/images/2.png');
+    background: URL('assets/images/2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 44% bottom;
