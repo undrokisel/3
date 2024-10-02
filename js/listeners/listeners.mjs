@@ -1,7 +1,7 @@
 import { addEmployeeProcessStepName } from '../newEmploee/addEmployeeProcessStepName.mjs';
 import { btnIds } from '../utils/constants.mjs';
-import {} from 'js/storageHandlers/storageHandlers.mjs';
-import {} from 'js/utils/constants.mjs';
+import {} from '../storageHandlers/storageHandlers.mjs';
+import {} from '../utils/constants.mjs';
 
 
 
