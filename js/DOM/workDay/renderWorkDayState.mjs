@@ -2,7 +2,7 @@ import { hideDatesCalendar } from "../../calendar/utils.mjs";
 import { getHours } from "../../stats/getHours.mjs";
 import { getStorage, saveToStorageWorkDay } from "../../storageHandlers/storageHandlers.mjs";
 import { btnIds, SUCCESS } from "../../utils/constants.mjs";
-import { hideElem, timeStringToMinutes } from "../../utils/utils.mjs";
+import { hideElem } from "../../utils/utils.mjs";
 import { displayElem } from "../displayElem.mjs";
 import { goHomeBtn } from "../goHomeBtn.mjs";
 import { hideElements } from "../hideElements.mjs";

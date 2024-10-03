@@ -186,6 +186,7 @@ button:focus-visible {
 .work-day {
     background-color: #ffff00 !important;
     color: black !important;
+    padding: 5px !important;
     /* Желтый цвет */
 }
 
@@ -195,4 +196,21 @@ button:focus-visible {
 
 span {
     text-align: left !important;
+}
+
+.calendar-work-day_span,
+.earnings_span
+{
+    font-size: 10px !important;
+    color:black !important;
+    line-height: 0.8rem !important;
+}
+
+.calendar-work-day_span:first-of-type{
+    font-size: 14px !important;
+}
+
+.earnings_span{
+    color:red !important;
+
 }

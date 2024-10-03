@@ -1,5 +1,6 @@
 import { createBnt } from "../DOM/createBnt.mjs";
 import { showElemVisibility } from "../DOM/hideElements.mjs";
+import { getHours } from "../stats/getHours.mjs";
 import { getStorage } from "../storageHandlers/storageHandlers.mjs";
 import { btnIds, LINK_CALENDAR_MSG } from "../utils/constants.mjs";
 import { hideElem } from "../utils/utils.mjs";
@@ -26,9 +27,15 @@ export function renderCalendar(workDayState){
 
     const name = workDayState['name'];
     let dates;
+    let rates;
+    let rate;
     let employeeWorkDays;
     if (name){
         dates = getStorage('dates');  
+        rates = getStorage('rates');  
+        rate = rates[name];
+
+        
         if(dates){
             employeeWorkDays = dates[name];
         } else {
@@ -54,17 +61,37 @@ export function renderCalendar(workDayState){
 
             changeTime(e, self) {}, // изменение времени
             getDays(day, date, HTMLElement, HTMLButtonElement, self) {
+
+
                 HTMLButtonElement.style.flexDirection = 'column';
-                HTMLButtonElement.innerHTML = `<span data-calendar-day=${date}>${day}</span><span data-calendar-day=${date} style="font-size: 8px;color:black;>.</span>`;
+                HTMLButtonElement.innerHTML = `<span class="calendar-work-day" 
+                    data-calendar-day=${date}>${day}
+                </span>`;
 
                 if (employeeWorkDays){
                     if (date in employeeWorkDays){
+                        // помечаем классом div как содержащий инфу о рабочей смене                        
+                        HTMLElement.classList.add("vanilla-calendar-work-day")
+
+
+                        const hours = getHours(employeeWorkDays[date][1], employeeWorkDays[date][0])
+                        const earnings = Math.round(hours * rate);
+
                         HTMLButtonElement.classList.add('work-day');
                         HTMLButtonElement.innerHTML = `
-                        <span data-calendar-day=${date}>${day}</span>
-                        <span data-calendar-day=${date} style="font-size: 10px;color:black;">${employeeWorkDays[date][0]}</span>
-                        <span data-calendar-day=${date} style="font-size: 10px;color:black;">${employeeWorkDays[date][1]}</span>
-                        
+
+                            <span class="calendar-work-day_span" 
+                                data-calendar-day=${date}>${day}
+                            </span>
+
+                            <span class="calendar-work-day_span" 
+                                data-calendar-day=${date}>${employeeWorkDays[date][0]}-${employeeWorkDays[date][1]}
+                            </span>
+                            
+                            <span class="calendar-work-day_span" 
+                                data-calendar-day=${date}>${hours} ч.: 
+                                    <span class="earnings_span">${earnings}</span>
+                            </span>
                         `
                     }
                 }    
@@ -91,6 +118,42 @@ export function renderCalendar(workDayState){
 
     // Первоначально спрячем выбор времени    
     hideElem(btnIds.TIME_BLOCK_CLASS)
+
+    countEarningsFromCalendar();
 };
 
+
+export function countEarningsFromCalendar(){
+    const dayBtns = document.querySelectorAll('.vanilla-calendar-day');
+
+    console.log(dayBtns[0]);
+
+    const weeks = [
+        [0,7],
+        [7,14],
+        [14,21],
+        [21,28],
+    ];
+
+    const weeksEarningsArr = [];
+    
+    weeks.forEach(week => {
+        countWeekSum(week, dayBtns);
+    })
+    
+    function countWeekSum(week, days){
+        let sum = 0;
+        for(let index = week[0]; index < week[1]; index++ ){
+            const day = days[index];
+            const isWorkDay = day.classList.contains("vanilla-calendar-work-day");
+            if (!isWorkDay) continue   
+            const earningsSpanText = day.querySelector('.earnings_span').innerText;
+            sum += +earningsSpanText;
+        }
+        weeksEarningsArr.push(sum)
+    }
+
+    console.log(weeksEarningsArr)    
+
+}
 
