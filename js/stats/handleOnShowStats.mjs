@@ -61,12 +61,12 @@ export function handleOnShowStats() {
     })
 
 
-    displayElem({
-        id: "stats-save-btn",
-        tag: "button",
-        innerHTML: `Cохранить статистику в файл`,
-        onclick: () => onSaveStatsHandle(str)
-    })
+    // displayElem({
+    //     id: "stats-save-btn",
+    //     tag: "button",
+    //     innerHTML: `Cохранить статистику в файл`,
+    //     onclick: () => onSaveStatsHandle(str)
+    // })
     
 }
 
