@@ -1,4 +1,5 @@
 import { createBnt } from "../DOM/createBnt.mjs";
+import { displayElem } from "../DOM/displayElem.mjs";
 import { showElemVisibility } from "../DOM/hideElements.mjs";
 import { getHours } from "../stats/getHours.mjs";
 import { getStorage } from "../storageHandlers/storageHandlers.mjs";
@@ -153,7 +154,19 @@ export function countEarningsFromCalendar(){
         weeksEarningsArr.push(sum)
     }
 
-    console.log(weeksEarningsArr)    
+
+    if(weeksEarningsArr.length === 4){
+        let msg = ``;
+        weeksEarningsArr.forEach((weekEarningsArr, index) => {
+            msg += `<p>Неделя ${index + 1}: ${weekEarningsArr} руб.</p>`
+        })
+        displayElem({
+            id: 'week-earnings-block',
+            className: 'week-earnings-block',
+            innerHTML: `${msg}`,
+            parentSelector: 'body'
+        })
+    }
 
 }
 
